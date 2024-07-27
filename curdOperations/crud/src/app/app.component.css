@@ -1,0 +1,61 @@
+:host{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.head{
+    width:600px;
+    height:100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: aquamarine;
+}
+.head button{
+    border: none;
+    border-color: azure;
+    border-radius: 10px;
+    width:100px;
+    height: 40px;
+    cursor: pointer;
+    background-color: burlywood;
+}
+.head button:hover{
+    color: chartreuse;
+    background-color: chocolate;
+}
+table{
+    width:700px;
+    border-collapse: collapse;
+}
+table tr{
+    text-align: center;
+    height: 30px;
+}
+
+table tr:nth-child(odd){
+    background:#89ABE3;
+}
+table tr:nth-child(even):not(tr:nth-child(1)){
+    background:#EA738D;
+}
+.headings{
+     background-color: aqua;
+}
+.update{
+    border: none;
+    border-radius: 5%;
+    background-color: burlywood;
+    width:80px;
+    height: 20px;
+    cursor: pointer;
+}
+.delete{
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    width:80px;
+    height: 20px;
+    cursor: pointer;
+}
