@@ -1,6 +1,8 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <div class="head">
   <h3>Users Data</h3>
-<button>new Register</button>
+<button (click)="form()">new Register</button>
 </div>
 <table>
   <tr class="headings">
@@ -14,6 +16,36 @@
     <td>{{data['name']}}</td>
     <td>{{data['email']}}</td>
     <td>{{data['password']}}</td>
-    <td><button class="update">Update</button><button class="delete" (click)="delete(data['id'])">Delete</button></td>
+    <td><button class="update" (click)="form(data)">Update</button>
+      <button class="delete" (click)="delete(data['id'])">Delete</button></td>
   </tr>
 </table>
+
+
+<div class="form-wrapper" *ngIf="ifform">
+  <div class="mobileForm">
+    <div class="headofForm">
+      <h2 class="text-info text-center">{{formName}}</h2>
+     <div class="icon" (click)="closeForm()"> <i class="fa-solid fa-xmark"></i></div>
+    </div>
+      
+      <div class="group">
+          <label for="mobile">Name</label>
+          <input type="text" class="form-control" [(ngModel)]="name" name="mname" required minlength="5">
+      </div>
+      <div class="group">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" [(ngModel)]="email" name="email" required min="7">
+      </div>
+      <div class="group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" [(ngModel)]="password" name="password" required min="7">
+      </div>
+      
+
+      <div class="action">
+          <button class="btn btn-primary save" (click)="postData()">Save Changes</button>
+          
+      </div>
+  </div>
+</div>
