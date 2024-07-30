@@ -36,7 +36,7 @@ app.get('/getData',(req,res)=>{
 app.post('/postData',(req,res)=>{
     const data = req.body;
    
-    const query='insert into mytable set (?)';
+    const query='insert into mytable set ?';
     db.query(query,data,(err)=>{
         if(err) throw err;
         return res.status(201).json({ success: true, message: 'User registered successfully' });
@@ -60,8 +60,9 @@ app.delete('/delete/:id',(req,res)=>{
 })
 
 app.put('/update/:id',(req,res)=>{
-    const query='update mytable set name='+req.body.name+" "+"email="+req.body.email+" "+"password="+req.body.password;
-    db.query(query,(err)=>{
+    const data=req.body;
+    const query='update mytable set ?';
+    db.query(query,data,(err)=>{
         if(err)
             {
                 res.send({message:err})

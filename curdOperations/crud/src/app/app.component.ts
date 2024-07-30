@@ -54,6 +54,8 @@ this.getData()
       
           this.http.put("http://localhost:1000/update/"+this.id,body).subscribe((res)=>{
             console.log(res)
+            this.getData()
+
           },(err)=>{
             console.log(err)
           })
@@ -61,6 +63,7 @@ this.getData()
     else{
     this.http.post("http://localhost:1000/postData",body).subscribe((res)=>{
       console.log(res)
+      this.getData()
     },(err)=>{
       console.log(err)
     })
