@@ -59,10 +59,11 @@ app.delete('/delete/:id',(req,res)=>{
     })
 })
 
-app.put('/update/:id',(req,res)=>{
-    const data=req.body;
-    const query='update mytable set ?';
-    db.query(query,data,(err)=>{
+app.patch('/update/:id',(req,res)=>{
+    const { id } = req.params;
+    const { name, email, password } = req.body;
+    const query='UPDATE mytable set name=?,email=?,password=? where id = ?';
+    db.query(query,[name,email,password,id],(err)=>{
         if(err)
             {
                 res.send({message:err})

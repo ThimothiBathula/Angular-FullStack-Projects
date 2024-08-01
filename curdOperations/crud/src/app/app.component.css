@@ -5,12 +5,13 @@
     flex-direction: column;
 }
 .head{
-    width:600px;
+    width:700px;
     height:100px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: aquamarine;
+    border-radius:10px ;
 }
 .head button{
     border: none;
@@ -19,15 +20,17 @@
     width:100px;
     height: 40px;
     cursor: pointer;
-    background-color: burlywood;
+    background:rgba(230, 20, 200, 0.5);
+    box-shadow: 0px 5px 10px 0 black;
 }
-.head button:hover{
+/* .head button:hover{
     color: chartreuse;
     background-color: chocolate;
-}
+} */
 table{
     width:700px;
     border-collapse: collapse;
+    border-radius: 20px;
 }
 table tr{
     text-align: center;
@@ -76,7 +79,7 @@ table tr:nth-child(1){
     z-index: 100;
 }
 
-.mobileForm{
+.form{
     background-color: white;
     width: 600px;
     padding: 20px 50px;
@@ -112,7 +115,7 @@ table tr:nth-child(1){
     border: none;
     cursor: pointer;
     background-color: rgb(0, 255, 0);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .headofForm{
     display: flex;

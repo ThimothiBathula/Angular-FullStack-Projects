@@ -51,8 +51,8 @@ this.getData()
       password:this.password
     }
     if(this.id){
-      
-          this.http.put("http://localhost:1000/update/"+this.id,body).subscribe((res)=>{
+        
+          this.http.patch("http://localhost:1000/update/"+this.id,body).subscribe((res)=>{
             console.log(res)
             this.getData()
 
@@ -76,13 +76,15 @@ this.getData()
       this.name=ifdata['name'];
       this.email=ifdata['email'];
       this.password=ifdata['password'];
-      this.formName="Edit Details"
+      this.formName="Edit Details";
+      this.id =ifdata['id'];
     }
     else{
       this.name="";
       this.email="";
       this.password="";
-      this.formName="Register New Member"
+      this.formName="Register New Member";
+      this.id=null
     }
   }
   closeForm(){
@@ -91,7 +93,7 @@ this.getData()
   }
   clearForm(){
     this.name="";
-    this.email="",
+    this.email="";
     this.password="";
   }
 
